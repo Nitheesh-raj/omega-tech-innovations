@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -21,9 +21,12 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 box-glow">
-            <Zap className="h-5 w-5 text-primary" />
-          </div>
+          <img
+            src="/favicon.ico"
+            alt="Omega Tech Logo"
+            className="h-9 w-9 rounded-lg box-glow bg-primary/10"
+            style={{ objectFit: 'contain' }}
+          />
           <span className="font-display text-lg font-bold tracking-wider text-foreground">
             OMEGA <span className="text-primary">TECH</span>
           </span>

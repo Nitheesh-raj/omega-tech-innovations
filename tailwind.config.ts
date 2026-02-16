@@ -24,8 +24,8 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "hsl(265,90%,60%)", // purple
+          foreground: "hsl(0,0%,100%)", // white
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -52,8 +52,8 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         neon: {
-          cyan: "hsl(var(--neon-glow))",
-          purple: "hsl(var(--neon-purple))",
+          cyan: "hsl(265,90%,60%)",
+          purple: "hsl(265,90%,60%)",
           green: "hsl(var(--neon-green))",
         },
         sidebar: {

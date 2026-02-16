@@ -39,7 +39,7 @@ const HeroSection = () => {
           <h1 className="font-display text-5xl font-bold leading-tight tracking-wider sm:text-6xl md:text-7xl lg:text-8xl">
             <span className="gradient-text">Innovate.</span>{" "}
             <span className="text-foreground">Learn.</span>{" "}
-            <span className="text-glow text-primary">Lead.</span>
+            <span className="text-primary">Lead.</span>
           </h1>
 
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
