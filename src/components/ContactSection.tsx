@@ -136,14 +136,26 @@ const ContactSection = () => {
                   />
                 </div>
               </div>
-              <div>
-                <label className="mb-2 block text-sm font-medium text-foreground">Subject</label>
-                <Input
-                  placeholder="Inquiry subject"
-                  value={formData.subject}
-                  onChange={(e) => setFormData(p => ({ ...p, subject: e.target.value }))}
-                  className="bg-secondary/50 border-border/50"
-                />
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-foreground">Phone</label>
+                  <Input
+                    type="tel"
+                    placeholder="Your phone number"
+                    value={formData.phone}
+                    onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
+                    className="bg-secondary/50 border-border/50"
+                  />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-foreground">Subject</label>
+                  <Input
+                    placeholder="Inquiry subject"
+                    value={formData.subject}
+                    onChange={(e) => setFormData(p => ({ ...p, subject: e.target.value }))}
+                    className="bg-secondary/50 border-border/50"
+                  />
+                </div>
               </div>
               <div>
                 <label className="mb-2 block text-sm font-medium text-foreground">Message</label>
