@@ -168,9 +168,9 @@ const ContactSection = () => {
                   className="bg-secondary/50 border-border/50"
                 />
               </div>
-              <Button type="submit" className="w-full font-display text-sm tracking-wider box-glow group">
-                <Send className="h-4 w-4" />
-                Send Inquiry
+              <Button type="submit" disabled={isSubmitting} className="w-full font-display text-sm tracking-wider box-glow group">
+                {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+                {isSubmitting ? "Sending..." : "Send Inquiry"}
               </Button>
             </form>
           </motion.div>
