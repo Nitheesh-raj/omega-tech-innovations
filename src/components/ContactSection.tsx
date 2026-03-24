@@ -21,9 +21,7 @@ const ContactSection = () => {
     };
 
     try {
-      const sheetUrl = import.meta.env.VITE_GOOGLE_SHEET_URL;
-      if (sheetUrl) {
-        await fetch(sheetUrl, {
+      await fetch("https://script.google.com/macros/s/AKfycbxZEqykcz4eNy54U6_rh-q73Y2eMb50C0zZZ6fwBtKmzMUB5ZVvlXjvuIcg88q8C0UQ/exec", {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "application/json" },
