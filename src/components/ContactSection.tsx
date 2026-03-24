@@ -22,15 +22,14 @@ const ContactSection = () => {
 
     try {
       await fetch("https://script.google.com/macros/s/AKfycbxZEqykcz4eNy54U6_rh-q73Y2eMb50C0zZZ6fwBtKmzMUB5ZVvlXjvuIcg88q8C0UQ/exec", {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-      }
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
       toast({
-        title: "Inquiry Sent!",
+        title: "Inquiry sent successfully!",
         description: "Thank you for reaching out. We'll get back to you soon.",
       });
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
