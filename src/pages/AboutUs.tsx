@@ -13,24 +13,28 @@ const teamMembers = [
     title: "Founder & Managing Director",
     description: "Architect of our organization's vision and strategic direction, leading with excellence and innovation.",
     image: teamNisha,
+    imagePosition: "center top",
   },
   {
     name: "Bala Tharani",
     title: "Director of Finance (CAO)",
     description: "Responsible for financial health and integrity, overseeing financial planning, accounting, and investor relations.",
     image: teamBaladharani,
+    imagePosition: "center 18%",
   },
   {
     name: "Preethi",
     title: "Director of Business Development & R&D",
     description: "Driving growth through strategic partnerships, innovative product development, and market expansion.",
     image: teamPreethi,
+    imagePosition: "center top",
   },
   {
     name: "Nilofer",
     title: "Director of Operations (PRO)",
     description: "Managing the operational backbone of the organization while serving as the primary communications liaison.",
     image: teamNilopher,
+    imagePosition: "center top",
   },
 ];
 
@@ -88,7 +92,8 @@ const AboutUs = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="h-full w-full object-cover object-top"
+                        className="h-full w-full object-cover"
+                        style={{ objectPosition: member.imagePosition }}
                       />
                     </div>
                     {/* Decorative ring */}
