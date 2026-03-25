@@ -94,7 +94,7 @@ const AboutUs = () => {
                         src={member.image}
                         alt={member.name}
                         className="h-full w-full object-cover"
-                        style={{ objectPosition: member.imagePosition }}
+                        style={{ objectPosition: member.imagePosition, transform: member.imageScale ? `scale(${member.imageScale})` : undefined }}
                       />
                     </div>
                     {/* Decorative ring */}
