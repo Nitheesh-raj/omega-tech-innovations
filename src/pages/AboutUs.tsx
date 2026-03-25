@@ -3,30 +3,39 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
+import teamNisha from "@/assets/team-nisha.jpeg";
+import teamBaladharani from "@/assets/team-baladharani.jpeg";
+import teamPreethi from "@/assets/team-preethi.jpeg";
+import teamNilopher from "@/assets/team-nilopher.jpeg";
+
 const teamMembers = [
   {
     name: "Dr. S. Nisha",
     title: "Founder & Managing Director",
     description: "Architect of our organization's vision and strategic direction, leading with excellence and innovation.",
     initials: "SN",
+    image: teamNisha,
   },
   {
-    name: "Baladharani",
+    name: "Bala Tharani",
     title: "Director of Finance (CAO)",
     description: "Responsible for financial health and integrity, overseeing financial planning, accounting, and investor relations.",
-    initials: "BD",
+    initials: "BT",
+    image: teamBaladharani,
   },
   {
     name: "Preethi",
     title: "Director of Business Development & R&D",
     description: "Driving growth through strategic partnerships, innovative product development, and market expansion.",
     initials: "PR",
+    image: teamPreethi,
   },
   {
-    name: "Nilopher",
+    name: "Nilofer",
     title: "Director of Operations (PRO)",
     description: "Managing the operational backbone of the organization while serving as the primary communications liaison.",
     initials: "NL",
+    image: teamNilopher,
   },
 ];
 
@@ -72,7 +81,7 @@ const AboutUs = () => {
                 className="group rounded-xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm text-center transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(265_90%_60%/0.1)] hover:-translate-y-1"
               >
                 <Avatar className="mx-auto mb-5 h-24 w-24 border-2 border-primary/30 transition-all duration-300 group-hover:border-primary/60 group-hover:shadow-[0_0_20px_hsl(265_90%_60%/0.2)]">
-                  <AvatarImage src="" />
+                  <AvatarImage src={member.image} alt={member.name} className="object-cover" />
                   <AvatarFallback className="bg-primary/10 font-display text-lg text-primary">
                     {member.initials}
                   </AvatarFallback>
