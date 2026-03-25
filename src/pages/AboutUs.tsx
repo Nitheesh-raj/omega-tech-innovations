@@ -20,7 +20,8 @@ const teamMembers = [
     title: "Director of Finance (CAO)",
     description: "Responsible for financial health and integrity, overseeing financial planning, accounting, and investor relations.",
     image: teamBaladharani,
-    imagePosition: "top center",
+    imagePosition: "50% 10%",
+    imageScale: 1.5,
   },
   {
     name: "Preethi",
