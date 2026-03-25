@@ -92,7 +92,8 @@ const AboutUs = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="h-full w-full object-cover object-top"
+                        className="h-full w-full object-cover"
+                        style={{ objectPosition: member.imagePosition }}
                       />
                     </div>
                     {/* Decorative ring */}
