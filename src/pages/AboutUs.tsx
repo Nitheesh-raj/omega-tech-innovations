@@ -34,7 +34,7 @@ const teamMembers = [
     title: "Director of Operations (PRO)",
     description: "Managing the operational backbone of the organization while serving as the primary communications liaison.",
     image: teamNilopher,
-    imagePosition: "center top",
+    imagePosition: "50% 10%",
   },
 ];
 
