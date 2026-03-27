@@ -100,13 +100,13 @@ const AboutUs = () => {
                     <div className="absolute -inset-1.5 rounded-full border border-primary/10 group-hover:border-primary/20 transition-colors duration-300" />
                   </div>
 
-                  <h3 className="font-display text-lg font-bold tracking-wider text-foreground mb-1">
+                  <h3 className="text-lg font-bold tracking-wider text-foreground mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
                     {member.name}
                   </h3>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#2D2D2D' }}>
                     {member.title}
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm leading-relaxed" style={{ color: '#555555' }}>
                     {member.description}
                   </p>
                 </div>
