@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Zap, Mail, Phone, MapPin } from "lucide-react";
+import { Zap, Mail, Phone, MapPin, Globe, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -17,8 +17,19 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Future-focused technology training and innovation center. We don't just teach technology — we build innovators.
+              Empowering Innovation. Building Future Leaders. A premier technology training and skill development organization.
             </p>
+            <div className="flex items-center gap-3">
+              <a href="https://instagram.com/omegatechpvt" target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-muted-foreground hover:text-primary transition-colors">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href="https://linkedin.com/company/omega-tech" target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a href="https://youtube.com/@OMEGATECH" target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-muted-foreground hover:text-primary transition-colors">
+                <Youtube className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -27,6 +38,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</Link>
               <Link to="/courses" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Courses</Link>
+              <Link to="/about-us" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</Link>
               <Link to="/internship" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Internship</Link>
               <Link to="/placement" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Placement</Link>
             </div>
@@ -43,20 +55,23 @@ const Footer = () => {
                 <Phone className="h-4 w-4 text-primary" /> +91 87542 63141
               </a>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4 mt-0.5 text-primary" /> India
+                <MapPin className="h-4 w-4 mt-0.5 text-primary" /> Theni, Tamil Nadu, India
               </div>
+              <a href="https://www.omegatechs.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Globe className="h-4 w-4 text-primary" /> www.omegatechs.in
+              </a>
             </div>
           </div>
 
-          {/* Hours */}
+          {/* Our Commitment */}
           <div>
-            <h4 className="mb-4 font-display text-sm font-semibold tracking-wider text-primary">Programs</h4>
+            <h4 className="mb-4 font-display text-sm font-semibold tracking-wider text-primary">Our Commitment</h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <span>AI & Machine Learning</span>
-              <span>Data Science</span>
-              <span>Robotics & IoT</span>
-              <span>Cybersecurity</span>
-              <span>Cloud & DevOps</span>
+              <span>Skill Development & Employability</span>
+              <span>Real-World Project Exposure</span>
+              <span>Internship & Placement Assistance</span>
+              <span>Industry Mentorship</span>
+              <span>Career-Oriented Training</span>
             </div>
           </div>
         </div>

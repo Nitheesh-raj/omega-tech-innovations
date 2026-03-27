@@ -16,9 +16,9 @@ const AboutSection = () => {
             About Omega Tech
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Omega Tech is a future-focused technology training and innovation center dedicated to empowering 
-            students, graduates, and professionals with industry-ready skills. We bridge the gap between 
-            academic knowledge and real-world industry expectations.
+            Omega Tech is a dynamic technology training and skill development organization committed to 
+            shaping future-ready professionals. We focus on bridging the gap between academic knowledge 
+            and industry requirements through hands-on learning, expert mentorship, and real-world project exposure.
           </p>
         </motion.div>
 
@@ -35,8 +35,8 @@ const AboutSection = () => {
             </div>
             <h3 className="font-display text-xl font-semibold tracking-wider text-foreground mb-3">Our Vision</h3>
             <p className="text-muted-foreground leading-relaxed">
-              To become a leading technology training and innovation hub that transforms students into skilled 
-              tech professionals capable of solving real-world challenges using AI and emerging technologies.
+              To be a leading force in technology training and skill development, empowering individuals 
+              to become innovative, adaptable, and future-ready professionals who excel in the digital world.
             </p>
           </motion.div>
 
@@ -51,13 +51,11 @@ const AboutSection = () => {
               <Target className="h-6 w-6 text-accent" />
             </div>
             <h3 className="font-display text-xl font-semibold tracking-wider text-foreground mb-3">Our Mission</h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" /> Industry-oriented training in trending technologies</li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" /> Practical, project-based learning experiences</li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" /> Creating employment-ready professionals</li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" /> Promoting innovation and entrepreneurship</li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" /> Industry collaboration for real-time project exposure</li>
-            </ul>
+            <p className="text-muted-foreground leading-relaxed">
+              To provide high-quality, hands-on technology education supported by expert mentorship and 
+              real-world learning experiences. We equip learners with practical skills, confidence, and 
+              career-focused guidance that drive long-term success.
+            </p>
           </motion.div>
         </div>
       </div>
