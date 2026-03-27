@@ -20,8 +20,7 @@ const teamMembers = [
     title: "Director of Finance (CAO)",
     description: "Responsible for financial health and integrity, overseeing financial planning, accounting, and investor relations.",
     image: teamBaladharani,
-    imagePosition: "50% 30%",
-    imageScale: 1.5,
+    imagePosition: "50% 15%",
   },
   {
     name: "Preethi",
@@ -35,7 +34,7 @@ const teamMembers = [
     title: "Director of Operations (PRO)",
     description: "Managing the operational backbone of the organization while serving as the primary communications liaison.",
     image: teamNilopher,
-    imagePosition: "center top",
+    imagePosition: "50% 10%",
   },
 ];
 
@@ -94,7 +93,7 @@ const AboutUs = () => {
                         src={member.image}
                         alt={member.name}
                         className="h-full w-full object-cover"
-                        style={{ objectPosition: member.imagePosition, transform: member.imageScale ? `scale(${member.imageScale})` : undefined }}
+                        style={{ objectPosition: member.imagePosition }}
                       />
                     </div>
                     {/* Decorative ring */}
