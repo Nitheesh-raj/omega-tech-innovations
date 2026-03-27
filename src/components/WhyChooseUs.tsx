@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
-import { BookOpen, Briefcase, Award, Users, GraduationCap, IndianRupee, Wrench } from "lucide-react";
+import { Users, BookOpen, Cpu, Briefcase, Lightbulb, Layers } from "lucide-react";
 
 const benefits = [
-  { icon: BookOpen, title: "Industry-Oriented Curriculum", desc: "Courses designed with real industry requirements" },
-  { icon: Wrench, title: "Live Projects & Case Studies", desc: "Hands-on experience with real-world projects" },
-  { icon: Award, title: "Internship with Certification", desc: "Earn recognized certificates upon completion" },
-  { icon: Briefcase, title: "Placement Assistance", desc: "Career support and job referral programs" },
-  { icon: Users, title: "Expert Mentors", desc: "Learn from experienced industry professionals" },
-  { icon: IndianRupee, title: "Affordable Fees", desc: "Quality education at accessible pricing" },
-  { icon: GraduationCap, title: "Real-time Practical Training", desc: "Learn by doing with hands-on practice" },
+  { icon: Users, title: "Expert Faculty", desc: "Learn from experienced industry professionals and certified trainers" },
+  { icon: BookOpen, title: "Comprehensive Curriculum", desc: "Technical expertise and soft skills development combined" },
+  { icon: Cpu, title: "Cutting-Edge Resources", desc: "Advanced labs, software tools, and simulation environments" },
+  { icon: Briefcase, title: "Industry Connections", desc: "Internships, live projects, mentorship, and placement assistance" },
+  { icon: Lightbulb, title: "Holistic Development", desc: "Personality development, entrepreneurship, and leadership skills" },
+  { icon: Layers, title: "Innovative Learning Model", desc: "Flexible learning modes with interactive sessions" },
 ];
 
 const WhyChooseUs = () => {
@@ -29,7 +28,7 @@ const WhyChooseUs = () => {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((item, i) => (
             <motion.div
               key={item.title}

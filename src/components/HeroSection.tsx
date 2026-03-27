@@ -12,7 +12,6 @@ const HeroSection = () => {
         <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/5 blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-accent/5 blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/3 blur-[100px]" />
-        {/* Grid lines */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `linear-gradient(hsl(192 100% 50% / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(192 100% 50% / 0.3) 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
@@ -33,18 +32,17 @@ const HeroSection = () => {
             className="mx-auto flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm text-primary"
           >
             <Sparkles className="h-4 w-4" />
-            <span className="font-medium">Future-Ready Tech Training</span>
+            <span className="font-medium">Empowering Innovation. Building Future Leaders.</span>
           </motion.div>
 
           <h1 className="font-display text-5xl font-bold leading-tight tracking-wider sm:text-6xl md:text-7xl lg:text-8xl">
-            <span className="gradient-text">Innovate.</span>{" "}
-            <span className="text-foreground">Learn.</span>{" "}
-            <span className="text-primary">Lead.</span>
+            <span className="gradient-text">OMEGA</span>{" "}
+            <span className="text-primary">TECH</span>
           </h1>
 
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Empowering students, graduates & professionals with industry-ready skills in 
-            AI, Robotics, and emerging technologies. We don't just teach technology — we build innovators.
+            A premier technology training and skill development organization committed to shaping 
+            future-ready professionals for the digital world.
           </p>
 
           <motion.div

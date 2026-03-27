@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { Eye, Target, CheckCircle2 } from "lucide-react";
 
 import teamNisha from "@/assets/team-nisha.jpeg";
 import teamBaladharani from "@/assets/team-baladharani.jpeg";
@@ -38,6 +39,15 @@ const teamMembers = [
   },
 ];
 
+const commitments = [
+  "Skill Development & Employability",
+  "Real-World Project Exposure",
+  "Internship & Placement Assistance",
+  "Continuous Curriculum Upgradation",
+  "Industry Mentorship",
+  "Career-Oriented Training",
+];
+
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -58,20 +68,120 @@ const AboutUs = () => {
               className="mx-auto max-w-3xl space-y-5"
             >
               <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium tracking-wider text-primary uppercase">
-                Our Leadership
+                About Us
               </span>
               <h1 className="font-display text-4xl font-bold tracking-wider sm:text-5xl md:text-6xl gradient-text">
-                Meet Our Team
+                About Omega Tech
               </h1>
               <p className="text-base text-muted-foreground md:text-lg leading-relaxed max-w-2xl mx-auto">
-                The visionary leaders driving Omega Techs forward with strategic excellence and innovation.
+                A dynamic technology training and skill development organization committed to shaping 
+                future-ready professionals for the digital world.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Team Cards */}
-        <section className="container pb-24 px-4 sm:px-6">
+        {/* About Description */}
+        <section className="container pb-16 px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Omega Tech focuses on bridging the gap between academic knowledge and industry requirements 
+              through hands-on learning, expert mentorship, and real-world project exposure. We equip learners 
+              with practical skills, confidence, and career-focused guidance that drive long-term success.
+            </p>
+          </motion.div>
+        </section>
+
+        {/* Vision & Mission */}
+        <section className="container pb-20 px-4 sm:px-6">
+          <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm"
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <Eye className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="font-display text-xl font-semibold tracking-wider text-foreground mb-3">Our Vision</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To be a leading force in technology training and skill development, empowering individuals 
+                to become innovative, adaptable, and future-ready professionals who excel in the digital world.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm"
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                <Target className="h-6 w-6 text-accent" />
+              </div>
+              <h3 className="font-display text-xl font-semibold tracking-wider text-foreground mb-3">Our Mission</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To provide high-quality, hands-on technology education supported by expert mentorship and 
+                real-world learning experiences. We equip learners with practical skills, confidence, and 
+                career-focused guidance that drive long-term success.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Our Commitment */}
+        <section className="bg-card/30 py-20">
+          <div className="container px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text mb-4">
+                Our Commitment
+              </h2>
+            </motion.div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+              {commitments.map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="flex items-center gap-3 rounded-lg border border-border/50 bg-card/50 p-4"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                  <span className="text-sm font-medium text-foreground">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="container py-20 px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text mb-4">
+              Meet Our Team
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              The visionary leaders driving Omega Tech forward with strategic excellence and innovation.
+            </p>
+          </motion.div>
+
           <div className="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
             {teamMembers.map((member, i) => (
               <motion.div
@@ -82,11 +192,9 @@ const AboutUs = () => {
                 transition={{ duration: 0.5, delay: i * 0.12 }}
                 className="group relative rounded-2xl border border-border/50 bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-[0_8px_40px_hsl(265_90%_60%/0.15)] hover:-translate-y-1"
               >
-                {/* Top gradient accent */}
                 <div className="h-1 w-full bg-gradient-to-r from-primary/60 via-primary to-primary/60 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="p-6 sm:p-8 flex flex-col items-center text-center">
-                  {/* Profile photo - using object-top to center on face */}
                   <div className="relative mb-5">
                     <div className="h-28 w-28 sm:h-32 sm:w-32 rounded-full overflow-hidden border-[3px] border-primary/20 group-hover:border-primary/50 transition-all duration-300 group-hover:shadow-[0_0_25px_hsl(265_90%_60%/0.25)]">
                       <img
@@ -96,17 +204,16 @@ const AboutUs = () => {
                         style={{ objectPosition: member.imagePosition }}
                       />
                     </div>
-                    {/* Decorative ring */}
                     <div className="absolute -inset-1.5 rounded-full border border-primary/10 group-hover:border-primary/20 transition-colors duration-300" />
                   </div>
 
                   <h3 className="text-lg font-bold tracking-wider text-foreground mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
                     {member.name}
                   </h3>
-                  <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#2D2D2D' }}>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
                     {member.title}
                   </p>
-                  <p className="text-sm leading-relaxed" style={{ color: '#555555' }}>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     {member.description}
                   </p>
                 </div>

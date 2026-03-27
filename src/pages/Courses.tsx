@@ -1,66 +1,46 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Brain, BarChart3, Bot, Code, Shield, Cloud, Gamepad2 } from "lucide-react";
+import { Palette, TrendingUp, Cog, School } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const courseData = [
   {
-    category: "AI & Machine Learning",
-    icon: Brain,
+    category: "Division 1 — Arts & Science",
+    icon: Palette,
     courses: [
-      "Introduction to AI", "Machine Learning with Python", "Deep Learning & Neural Networks",
-      "Generative AI & ChatGPT Development", "AI for Business Applications",
-      "AI in Healthcare", "AI in Finance", "AI in Education",
+      "Communication & Soft Skills", "Personality Development", "Entrepreneurship",
+      "Python Programming", "Cloud Computing & Azure", "Graphic Design & Photoshop",
+      "Mobile App Development", "MATLAB & Photography",
+      "Digital Marketing", "UI/UX Design", "Business Analytics",
     ],
   },
   {
-    category: "Data Science & Analytics",
-    icon: BarChart3,
+    category: "Division 2 — Master Programs",
+    icon: TrendingUp,
     courses: [
-      "Data Science Master Program", "Python for Data Science", "Data Analytics with Power BI",
-      "Tableau & Business Intelligence", "Big Data & Hadoop", "SQL for Data Analysis",
+      "Banking & Finance", "Stock Market", "Embedded Systems",
+      "Robotics", "Networking & ALS",
+      "FinTech Innovations", "Advanced Robotics", "Cyber Security Management",
     ],
   },
   {
-    category: "Robotics & Automation",
-    icon: Bot,
+    category: "Division 3 — Engineering & Technology",
+    icon: Cog,
     courses: [
-      "Robotics Fundamentals", "Arduino Programming", "IoT & Embedded Systems",
-      "Industrial Automation", "AI-Based Robotics", "Drone Technology & Programming",
+      "EV & Vehicle Design", "Robotics & Automation", "Software Development",
+      "AI & Machine Learning", "HVAC & Electrical Design", "Plumbing & Firefighting Design",
+      "Revit MEP", "V-Ray & Lumion", "Primavera", "PCB Design",
+      "Solar PV System", "Smart Grid", "3D Design & Printing",
+      "Accounting Executive (AECP)", "Taxation Master (TMCP)", "Payroll Management",
     ],
   },
   {
-    category: "Software Development",
-    icon: Code,
+    category: "Division 4 — School Programs",
+    icon: School,
     courses: [
-      "Full Stack Web Development", "Frontend Development (HTML, CSS, JS, React)",
-      "Backend Development (Node.js, Django)", "Mobile App Development",
-      "Flutter Development", "Software Testing & Automation",
-    ],
-  },
-  {
-    category: "Cybersecurity",
-    icon: Shield,
-    courses: [
-      "Ethical Hacking", "Cybersecurity Fundamentals", "Network Security",
-      "Penetration Testing", "Cloud Security",
-    ],
-  },
-  {
-    category: "Cloud & DevOps",
-    icon: Cloud,
-    courses: [
-      "AWS Cloud Computing", "Microsoft Azure", "Google Cloud Platform",
-      "DevOps & CI/CD", "Kubernetes & Docker",
-    ],
-  },
-  {
-    category: "Emerging Technologies",
-    icon: Gamepad2,
-    courses: [
-      "Blockchain Development", "Metaverse Development", "AR/VR Development",
-      "UI/UX Design", "Digital Marketing with AI Tools",
+      "Robotics & Coding", "AI & Data Science", "IoT & Electronics",
+      "Web Dev & Apps", "Spoken English", "Game Dev & VR",
     ],
   },
 ];
@@ -82,7 +62,7 @@ const Courses = () => {
               Our Courses
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Master the most in-demand technologies with our comprehensive, industry-oriented curriculum
+              Master in-demand technologies with our comprehensive, industry-oriented curriculum across four specialized divisions
             </p>
           </motion.div>
 

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -96,9 +96,18 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="text-sm font-medium text-foreground">India</p>
+                    <p className="text-sm font-medium text-foreground">Theni, Tamil Nadu, India</p>
                   </div>
                 </div>
+                <a href="https://www.omegatechs.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-lg border border-border/50 bg-card/50 p-4 transition-colors hover:border-primary/30">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                    <Globe className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Website</p>
+                    <p className="text-sm font-medium text-foreground">www.omegatechs.in</p>
+                  </div>
+                </a>
               </div>
             </div>
           </motion.div>
