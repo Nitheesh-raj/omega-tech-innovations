@@ -90,13 +90,46 @@ const ContactSection = () => {
                     <p className="text-sm font-medium text-foreground">+91 87542 63141</p>
                   </div>
                 </a>
-                <div className="flex items-center gap-4 rounded-lg border border-border/50 bg-card/50 p-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <MapPin className="h-5 w-5 text-primary" />
+                {/* Head Office */}
+                <div className="group relative rounded-lg border border-border/50 bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 hover:shadow-[0_4px_20px_hsl(265_90%_60%/0.1)]">
+                  <div className="absolute inset-x-0 top-0 h-0.5 rounded-t-lg bg-gradient-to-r from-violet-500 to-purple-600 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 mt-0.5">
+                      <MapPin className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="text-sm font-semibold text-foreground">Head Office</p>
+                        <span className="rounded-full bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-medium text-primary tracking-wider uppercase">Chennai</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        773, 7th Cross Street,<br />
+                        Sai Ganesh Nagar,<br />
+                        Jallidenpet, Pallikaranai,<br />
+                        Chennai – 600100
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="text-sm font-medium text-foreground">Theni, Tamil Nadu, India</p>
+                </div>
+
+                {/* Branch Office */}
+                <div className="group relative rounded-lg border border-border/50 bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 hover:shadow-[0_4px_20px_hsl(265_90%_60%/0.1)]">
+                  <div className="absolute inset-x-0 top-0 h-0.5 rounded-t-lg bg-gradient-to-r from-violet-500 to-purple-600 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 mt-0.5">
+                      <MapPin className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="text-sm font-semibold text-foreground">Branch Office</p>
+                        <span className="rounded-full bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-medium text-primary tracking-wider uppercase">Theni</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Opposite Cooperative Bank,<br />
+                        Thenkarai, Periyakulam,<br />
+                        Theni District – 625601
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <a href="https://www.omegatechs.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-lg border border-border/50 bg-card/50 p-4 transition-colors hover:border-primary/30">
