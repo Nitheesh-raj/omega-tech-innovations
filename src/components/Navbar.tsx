@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -14,9 +14,28 @@ const navLinks = [
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const isActive = (path: string) => location.pathname === path;
+
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash === "#contact") {
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [location.pathname, location.hash]);
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpen(false);
+    if (location.pathname === "/") {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/#contact");
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
@@ -48,11 +67,11 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <a href="#contact">
+          <button onClick={handleContactClick}>
             <Button size="sm" className="ml-4 font-display text-xs tracking-wider">
               Contact Us
             </Button>
-          </a>
+          </button>
         </nav>
 
         {/* Mobile Nav */}
@@ -78,11 +97,11 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <a href="#contact" onClick={() => setOpen(false)}>
+              <button onClick={handleContactClick} className="w-full">
                 <Button className="mt-4 w-full font-display text-xs tracking-wider">
                   Contact Us
                 </Button>
-              </a>
+              </button>
             </div>
           </SheetContent>
         </Sheet>
