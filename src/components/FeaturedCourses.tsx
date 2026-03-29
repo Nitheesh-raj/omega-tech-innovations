@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Palette, TrendingUp, Cog, School, ArrowRight } from "lucide-react";
+import { Palette, TrendingUp, Cog, School, ArrowRight, Globe } from "lucide-react";
 
 const divisions = [
   {
@@ -39,6 +39,17 @@ const divisions = [
     iconBg: "bg-sky-500/10",
     accentBar: "from-sky-500 to-blue-600",
   },
+  {
+    icon: Globe,
+    label: "Additional",
+    title: "Other Services",
+    desc: "Explore more services and solutions we offer.",
+    color: "text-rose-400",
+    iconBg: "bg-rose-500/10",
+    accentBar: "from-rose-500 to-pink-600",
+    url: "https://omega-tech.vercel.app/",
+    external: true,
+  },
 ];
 
 const FeaturedCourses = () => {
@@ -65,6 +76,8 @@ const FeaturedCourses = () => {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {divisions.map((div, i) => {
             const Icon = div.icon;
+            const isExternal = div.external;
+
             return (
               <motion.div
                 key={div.title}
@@ -72,33 +85,69 @@ const FeaturedCourses = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.09, duration: 0.4 }}
+                className="h-full"
               >
-                <Link
-                  to="/courses"
-                  className="group relative flex flex-col rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_6px_30px_hsl(265_90%_60%/0.12)] hover:-translate-y-1 overflow-hidden"
-                >
-                  {/* top accent bar */}
-                  <div className={`absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r ${div.accentBar} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
+                {isExternal ? (
+                  <a
+                    href={div.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex flex-col h-full rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_6px_30px_hsl(265_90%_60%/0.12)] hover:-translate-y-1 overflow-hidden"
+                  >
+                    {/* top accent bar */}
+                    <div className={`absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r ${div.accentBar} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
 
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg ${div.iconBg} transition-transform duration-300 group-hover:scale-110`}>
-                      <Icon className={`h-5 w-5 ${div.color}`} />
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg ${div.iconBg} transition-transform duration-300 group-hover:scale-110`}>
+                        <Icon className={`h-5 w-5 ${div.color}`} />
+                      </div>
+                      <span className={`text-xs font-semibold uppercase tracking-widest ${div.color}`}>
+                        {div.label}
+                      </span>
                     </div>
-                    <span className={`text-xs font-semibold uppercase tracking-widest ${div.color}`}>
-                      {div.label}
-                    </span>
-                  </div>
 
-                  <h3 className="font-display text-sm font-bold tracking-wider text-foreground mb-1 leading-snug">
-                    {div.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground mb-4">{div.count} courses</p>
+                    <h3 className="font-display text-sm font-bold tracking-wider text-foreground mb-1 leading-snug">
+                      {div.title}
+                    </h3>
+                    {div.desc ? (
+                      <p className="text-xs text-muted-foreground mb-4">{div.desc}</p>
+                    ) : (
+                      <p className="text-xs text-muted-foreground mb-4">{div.count} courses</p>
+                    )}
 
-                  <div className="mt-auto flex items-center gap-1 text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300">
-                    <span>Explore</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
-                </Link>
+                    <div className="mt-auto flex items-center gap-1 text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300">
+                      <span>Explore</span>
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                  </a>
+                ) : (
+                  <Link
+                    to="/courses"
+                    className="group relative flex flex-col h-full rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_6px_30px_hsl(265_90%_60%/0.12)] hover:-translate-y-1 overflow-hidden"
+                  >
+                    {/* top accent bar */}
+                    <div className={`absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r ${div.accentBar} opacity-60 group-hover:opacity-100 transition-opacity duration-300`} />
+
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg ${div.iconBg} transition-transform duration-300 group-hover:scale-110`}>
+                        <Icon className={`h-5 w-5 ${div.color}`} />
+                      </div>
+                      <span className={`text-xs font-semibold uppercase tracking-widest ${div.color}`}>
+                        {div.label}
+                      </span>
+                    </div>
+
+                    <h3 className="font-display text-sm font-bold tracking-wider text-foreground mb-1 leading-snug">
+                      {div.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mb-4">{div.count} courses</p>
+
+                    <div className="mt-auto flex items-center gap-1 text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300">
+                      <span>Explore</span>
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                  </Link>
+                )}
               </motion.div>
             );
           })}
