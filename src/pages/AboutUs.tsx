@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 
 
 import teamNisha from "@/assets/team-nisha.jpeg";
-import teamBaladharani from "@/assets/team-baladharani.jpeg";
-import teamPreethi from "@/assets/team-preethi.jpeg";
 import teamNilopher from "@/assets/team-nilopher.jpeg";
 
 const teamMembers = [
@@ -14,20 +12,6 @@ const teamMembers = [
     title: "Founder & Managing Director",
     description: "Architect of our organization's vision and strategic direction, leading with excellence and innovation.",
     image: teamNisha,
-    imagePosition: "center top",
-  },
-  {
-    name: "Bala Tharani",
-    title: "Director of Finance (CAO)",
-    description: "Responsible for financial health and integrity, overseeing financial planning, accounting, and investor relations.",
-    image: teamBaladharani,
-    imagePosition: "50% 15%",
-  },
-  {
-    name: "Preethi",
-    title: "Director of Business Development & R&D",
-    description: "Driving growth through strategic partnerships, innovative product development, and market expansion.",
-    image: teamPreethi,
     imagePosition: "center top",
   },
   {
