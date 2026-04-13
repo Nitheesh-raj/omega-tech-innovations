@@ -216,21 +216,21 @@ const AboutUs = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-24 max-w-6xl mx-auto">
+          <div className="space-y-32 max-w-7xl mx-auto px-4 sm:px-8">
             {categorizedTeams.map((teamCategory, categoryIndex) => (
               <div key={teamCategory.title}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="mb-10 text-center"
+                  className="mb-14 text-center"
                 >
-                  <h3 className="inline-flex items-center justify-center font-display text-2xl font-bold tracking-wide text-[#311b92] bg-[#7B5BA7]/10 px-6 py-2 rounded-full border border-[#7B5BA7]/20">
+                  <h3 className="inline-flex items-center justify-center font-display text-3xl font-bold tracking-wide text-[#311b92] bg-[#7B5BA7]/10 px-8 py-3 rounded-full border border-[#7B5BA7]/20">
                     {teamCategory.title}
                   </h3>
                 </motion.div>
 
-                <div className={`grid gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${teamCategory.members.length < 3 ? 'lg:justify-center lg:flex lg:flex-wrap' : ''}`}>
+                <div className={`grid gap-10 sm:gap-14 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${teamCategory.members.length < 3 ? 'lg:justify-center lg:flex lg:flex-wrap' : ''}`}>
                   {teamCategory.members.map((member, i) => (
                     <motion.div
                       key={member.name}
@@ -241,14 +241,14 @@ const AboutUs = () => {
                       className={`group relative rounded-2xl border border-[#7B5BA7]/20 bg-white overflow-hidden transition-all duration-300 hover:border-[#7B5BA7]/50 hover:shadow-[0_12px_48px_rgba(123,91,167,0.18)] hover:-translate-y-1.5 flex flex-col ${teamCategory.members.length < 3 ? 'lg:w-[calc(33.333%-1rem)] w-full' : ''}`}
                     >
                       {/* Top accent bar */}
-                      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#7B5BA7] via-[#9B7BC7] to-[#7B5BA7]" />
+                      <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#7B5BA7] via-[#9B7BC7] to-[#7B5BA7]" />
                       {/* Header gradient background */}
-                      <div className="absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-[#7B5BA7]/8 to-transparent" />
+                      <div className="absolute top-0 inset-x-0 h-44 bg-gradient-to-b from-[#7B5BA7]/8 to-transparent" />
 
-                      <div className="p-6 sm:p-7 flex flex-col items-center text-center relative z-10 flex-1">
+                      <div className="p-8 sm:p-10 flex flex-col items-center text-center relative z-10 flex-1">
                         {/* Profile Image */}
-                        <div className="relative mb-5 mt-4">
-                          <div className="h-28 w-28 sm:h-32 sm:w-32 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-[0_4px_20px_rgba(123,91,167,0.25)] group-hover:border-[#7B5BA7]/20 transition-all duration-300">
+                        <div className="relative mb-6 mt-4">
+                          <div className="h-36 w-36 sm:h-44 sm:w-44 rounded-full overflow-hidden border-[6px] border-white shadow-xl group-hover:shadow-[0_8px_30px_rgba(123,91,167,0.25)] group-hover:border-[#7B5BA7]/30 transition-all duration-300">
                             {member.image ? (
                               <img
                                 src={member.image}
@@ -258,7 +258,7 @@ const AboutUs = () => {
                               />
                             ) : (
                               <div className="h-full w-full bg-gradient-to-br from-[#7B5BA7]/20 to-[#7B5BA7]/5 flex items-center justify-center">
-                                <span className="text-3xl font-bold text-[#7B5BA7]/60">
+                                <span className="text-4xl font-bold text-[#7B5BA7]/60">
                                   {member.name.split(" ").slice(0, 2).map(n => n.replace(/[^a-zA-Z]/g, '')[0]).join("")}
                                 </span>
                               </div>
@@ -267,29 +267,29 @@ const AboutUs = () => {
                         </div>
 
                         {/* Name */}
-                        <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-[#1a103c] mb-2 font-sans leading-snug">
+                        <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#1a103c] mb-3 font-sans leading-snug">
                           {member.name}
                         </h3>
 
                         {/* Designation */}
                         {member.designation && (
-                          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.12em] text-[#311b92] mb-3 leading-relaxed line-clamp-3">
+                          <p className="text-sm sm:text-base font-bold uppercase tracking-[0.12em] text-[#311b92] mb-4 leading-relaxed line-clamp-3">
                             {member.designation}
                           </p>
                         )}
 
-                        <div className="w-10 h-0.5 bg-[#7B5BA7]/30 mb-3 mx-auto rounded-full" />
+                        <div className="w-12 h-1 bg-[#7B5BA7]/30 mb-4 mx-auto rounded-full" />
 
                         {/* Qualification */}
                         {member.qualification && (
-                          <p className="text-sm leading-relaxed text-slate-600 font-medium mb-2">
+                          <p className="text-base sm:text-lg leading-relaxed text-slate-600 font-semibold mb-3">
                             {member.qualification}
                           </p>
                         )}
 
                         {/* Additional Details */}
                         {member.details && (
-                          <p className="text-sm leading-relaxed text-slate-500 font-medium mt-auto pt-2 line-clamp-4">
+                          <p className="text-base leading-relaxed text-slate-600 font-medium mt-auto pt-3 line-clamp-4">
                             {member.details}
                           </p>
                         )}

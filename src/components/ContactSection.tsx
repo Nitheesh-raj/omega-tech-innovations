@@ -103,10 +103,7 @@ const ContactSection = () => {
                         <span className="rounded-full bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-medium text-primary tracking-wider uppercase">Chennai</span>
                       </div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        773, 7th Cross Street,<br />
-                        Sai Ganesh Nagar,<br />
-                        Jallidenpet, Pallikaranai,<br />
-                        Chennai – 600100
+                        Pallikaranai, Chennai – 600100
                       </p>
                     </div>
                   </div>
@@ -125,9 +122,8 @@ const ContactSection = () => {
                         <span className="rounded-full bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-medium text-primary tracking-wider uppercase">Theni</span>
                       </div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Opposite Cooperative Bank,<br />
-                        Thenkarai, Periyakulam,<br />
-                        Theni District – 625601
+                        Thenkarai,<br />
+                        Periyakulam, Theni DT – 625601
                       </p>
                     </div>
                   </div>

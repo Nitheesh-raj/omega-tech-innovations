@@ -56,14 +56,14 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
                 <div>
                   <p className="font-medium text-foreground/80 mb-0.5">Head Office</p>
-                  <p>773, 7th Cross Street, Sai Ganesh Nagar,<br />Jallidenpet, Pallikaranai, Chennai – 600100</p>
+                  <p>Pallikaranai, Chennai – 600100</p>
                 </div>
               </div>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
                 <div>
                   <p className="font-medium text-foreground/80 mb-0.5">Branch Office</p>
-                  <p>Opp Cooperative Bank, Thenkarai,<br />Periyakulam, Theni DT – 625601</p>
+                  <p>Thenkarai,<br />Periyakulam, Theni DT – 625601</p>
                 </div>
               </div>
               <a href="https://www.omegatechs.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
