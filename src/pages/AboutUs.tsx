@@ -2,28 +2,118 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-
 import teamNisha from "@/assets/team-nisha.jpeg";
 import teamNilopher from "@/assets/team-nilopher.jpeg";
+import teamLaviel from "@/assets/team-laviel.jpg";
+
+import teamSanawar from "@/assets/team-sanawar.jpg";
+import teamJoshna from "@/assets/team-joshna.jpg";
+import teamJeyabanu from "@/assets/team-jeyabanu.jpg";
+import teamPandimeena from "@/assets/team-pandimeena.jpg";
+import teamPradeep from "@/assets/team-pradeep.jpg";
+import teamSenthila from "@/assets/team-senthila.jpg";
+import teamPraise from "@/assets/team-praise.jpg";
+import teamLeona from "@/assets/team-leona.jpg";
+import teamPriyanka from "@/assets/team-priyanka.jpg";
 
 const teamMembers = [
   {
     name: "Dr. S. Nisha",
-    title: "Founder & Managing Director",
-    description: "Architect of our organization's vision and strategic direction, leading with excellence and innovation.",
+    designation: "Founder & Managing Director",
+    qualification: "",
+    details: "Architect of our organization's vision and strategic direction, leading with excellence and innovation.",
     image: teamNisha,
     imagePosition: "center top",
   },
   {
+    name: "Priyanka Lawrence",
+    designation: "Soft Skills & Communication Trainer | Assistant Professor | POSH Certified Trainer",
+    qualification: "MA., M.Phil., NET, (PhD)",
+    details: "",
+    image: teamPriyanka,
+    imagePosition: "center top",
+  },
+  {
+    name: "Dr. Praise Dyice Mohanraj",
+    designation: "Medical Psychologist, Student Counsellor, Relationship Coach, Psychotherapist, Life Coach, POSH Trainer, Theological Psychologist",
+    qualification: "",
+    details: "",
+    image: teamPraise,
+    imagePosition: "center top",
+  },
+  {
+    name: "Leona Hemslee B",
+    designation: "Senior Medical Coder",
+    qualification: "BE (CSE)",
+    details: "",
+    image: teamLeona,
+    imagePosition: "center top",
+  },
+  {
     name: "Nilofer",
-    title: "Director of Operations (PRO)",
-    description: "Managing the operational backbone of the organization while serving as the primary communications liaison.",
+    designation: "Director of Operations (PRO)",
+    qualification: "",
+    details: "Managing the operational backbone of the organization while serving as the primary communications liaison.",
     image: teamNilopher,
     imagePosition: "50% 10%",
   },
+  {
+    name: "G. Laviel Abhraham M.A.",
+    designation: "English",
+    qualification: "",
+    details: "Subject Expert in English, guiding students towards comprehensive linguistic proficiency.",
+    image: teamLaviel,
+    imagePosition: "center",
+  },
+  {
+    name: "Mohammed Sanawar R",
+    designation: "Senior Digital Marketing Specialist at Amazon",
+    qualification: "BE in Civil Engineering, MBA in Marketing",
+    details: "Professional Certified in Digital Marketing for Performance and Growth from IIM Kozhikode",
+    image: teamSanawar,
+    imagePosition: "center top",
+  },
+  {
+    name: "Joshna Shelly B",
+    designation: "Digital Creator",
+    qualification: "BSc (CS)",
+    details: "",
+    image: teamJoshna,
+    imagePosition: "center top",
+  },
+  {
+    name: "Jeyabanu A",
+    designation: "",
+    qualification: "DCE, BA (History), MA (Sociology)",
+    details: "",
+    image: teamJeyabanu,
+    imagePosition: "center 20%",
+  },
+  {
+    name: "Dr. P. Pandimeena",
+    designation: "Co-Director, QualityMend Physiotherapy Clinic & QualityEd Institute; Assistant Professor, Kalasalingam School of Physiotherapy",
+    qualification: "MPT (Ortho)",
+    details: "",
+    image: teamPandimeena,
+    imagePosition: "center top",
+  },
+  {
+    name: "Dr. B. Pradeep Kumar",
+    designation: "Director, QualityMend Physiotherapy Clinic & QualityEd Institute; Assistant Professor, Kalasalingam School of Physiotherapy",
+    qualification: "MPT (Neuro), MIAP",
+    details: "",
+    image: teamPradeep,
+    imagePosition: "center top",
+  },
+  {
+    name: "D. Senthila Devi",
+    designation: "",
+    qualification: "MSc, MPhil, MEd, PG Diploma in Bioinformatics",
+    details: "",
+    image: teamSenthila,
+    imagePosition: "center top",
+  },
 ];
-
-
 
 const AboutUs = () => {
   return (
@@ -58,13 +148,13 @@ const AboutUs = () => {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="container py-20 px-4 sm:px-6">
+        {/* Meet Our Team Section */}
+        <section className="container py-20 pb-24 px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
             <h2 className="font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text mb-4">
               Meet Our Team
@@ -74,23 +164,25 @@ const AboutUs = () => {
             </p>
           </motion.div>
 
-          <div className="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+          <div className="grid gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             {teamMembers.map((member, i) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="group relative rounded-2xl border border-[#7B5BA7]/30 bg-white overflow-hidden transition-all duration-300 hover:border-[#7B5BA7]/60 hover:shadow-[0_8px_40px_rgba(123,91,167,0.15)] hover:-translate-y-1"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative rounded-2xl border border-[#7B5BA7]/20 bg-white overflow-hidden transition-all duration-300 hover:border-[#7B5BA7]/50 hover:shadow-[0_12px_48px_rgba(123,91,167,0.18)] hover:-translate-y-1.5 flex flex-col"
               >
-                {/* Header Background */}
-                <div className="absolute top-0 inset-x-0 h-32 bg-[#7B5BA7]/10" />
-                <div className="absolute top-0 inset-x-0 h-1 bg-[#7B5BA7]" />
+                {/* Top accent bar */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#7B5BA7] via-[#9B7BC7] to-[#7B5BA7]" />
+                {/* Header gradient background */}
+                <div className="absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-[#7B5BA7]/8 to-transparent" />
 
-                <div className="p-6 sm:p-8 flex flex-col items-center text-center relative z-10">
-                  <div className="relative mb-6 mt-4">
-                    <div className="h-28 w-28 sm:h-32 sm:w-32 rounded-full overflow-hidden border-4 border-white shadow-md group-hover:border-[#7B5BA7]/20 transition-all duration-300">
+                <div className="p-6 sm:p-7 flex flex-col items-center text-center relative z-10 flex-1">
+                  {/* Profile Image */}
+                  <div className="relative mb-5 mt-4">
+                    <div className="h-28 w-28 sm:h-32 sm:w-32 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-[0_4px_20px_rgba(123,91,167,0.25)] group-hover:border-[#7B5BA7]/20 transition-all duration-300">
                       <img
                         src={member.image}
                         alt={member.name}
@@ -100,16 +192,33 @@ const AboutUs = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#1a103c] mb-2 font-sans">
+                  {/* Name */}
+                  <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-[#1a103c] mb-2 font-sans leading-snug">
                     {member.name}
                   </h3>
-                  <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#311b92] mb-4">
-                    {member.title}
-                  </p>
-                  <div className="w-12 h-0.5 bg-[#7B5BA7]/30 mb-4 mx-auto rounded-full" />
-                  <p className="text-sm sm:text-base leading-relaxed text-slate-700 font-medium">
-                    {member.description}
-                  </p>
+
+                  {/* Designation */}
+                  {member.designation && (
+                    <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.12em] text-[#311b92] mb-3 leading-relaxed line-clamp-3">
+                      {member.designation}
+                    </p>
+                  )}
+
+                  <div className="w-10 h-0.5 bg-[#7B5BA7]/30 mb-3 mx-auto rounded-full" />
+
+                  {/* Qualification */}
+                  {member.qualification && (
+                    <p className="text-sm leading-relaxed text-slate-600 font-medium mb-2">
+                      {member.qualification}
+                    </p>
+                  )}
+
+                  {/* Additional Details */}
+                  {member.details && (
+                    <p className="text-xs leading-relaxed text-slate-400 font-medium mt-auto pt-2 line-clamp-3">
+                      {member.details}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
