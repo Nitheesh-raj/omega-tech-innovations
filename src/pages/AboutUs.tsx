@@ -31,6 +31,11 @@ const categorizedTeams = [
         image: teamNisha,
         imagePosition: "center top",
       },
+    ],
+  },
+  {
+    title: "🎯 Director",
+    members: [
       {
         name: "Nilofer",
         designation: "Director of Operations (PRO)",
@@ -84,6 +89,14 @@ const categorizedTeams = [
         image: teamPandimeena,
         imagePosition: "center top",
       },
+      {
+        name: "Priyanka Lawrence",
+        designation: "Head – Soft Skills, Communication & Corporate Training",
+        qualification: "MA., M.Phil., NET, (PhD)",
+        details: "Leads communication, personality, and corporate skill development",
+        image: teamPriyanka,
+        imagePosition: "center top",
+      },
     ],
   },
   {
@@ -95,14 +108,6 @@ const categorizedTeams = [
         qualification: "BE in Civil Engineering, MBA in Marketing",
         details: "Drives online growth, branding, and marketplace performance",
         image: teamSanawar,
-        imagePosition: "center top",
-      },
-      {
-        name: "Priyanka Lawrence",
-        designation: "Head – Soft Skills, Communication & Corporate Training",
-        qualification: "MA., M.Phil., NET, (PhD)",
-        details: "Leads communication, personality, and corporate skill development",
-        image: teamPriyanka,
         imagePosition: "center top",
       },
       {
