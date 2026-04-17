@@ -18,6 +18,11 @@ import teamPriyanka from "@/assets/team-priyanka.jpg";
 import teamAshna from "@/assets/team-ashna.jpg";
 import teamAnanthbabu from "@/assets/team-ananthbabu.jpg";
 import teamAlaaudeen from "@/assets/team-alaaudeen.jpg";
+import teamAbdul from "@/assets/team-abdul.jpeg";
+import teamThajinsha from "@/assets/team-thajinsha.jpeg";
+import teamKarthiga from "@/assets/team-karthiga.jpeg";
+import teamKaran from "@/assets/team-karan.jpeg";
+import teamManoj from "@/assets/team-manoj.jpeg";
 
 const categorizedTeams = [
   {
@@ -90,10 +95,11 @@ const categorizedTeams = [
         imagePosition: "center top",
       },
       {
-        name: "Abdhur Rahman",
+        name: "Abdul Rahman",
         designation: "Senior Research Mentor – IT & Academic Development",
         qualification: "",
         details: "Teaching, research guidance, and academic coordination",
+        image: teamAbdul,
         imagePosition: "center top",
       },
     ],
@@ -135,6 +141,7 @@ const categorizedTeams = [
         designation: "Trainer – Vedic Maths & Quantitative Skills",
         qualification: "",
         details: "Conducts math and shortcut calculation training",
+        image: teamThajinsha,
         imagePosition: "center top",
       },
       {
@@ -150,6 +157,7 @@ const categorizedTeams = [
         designation: "Senior Trainer – English & Soft Skills",
         qualification: "",
         details: "Communication and language training expert",
+        image: teamKarthiga,
         imagePosition: "center top",
       },
       {
@@ -170,6 +178,7 @@ const categorizedTeams = [
         designation: "Senior Process Associate – Technical Operations",
         qualification: "",
         details: "Supports technical workflows and process handling",
+        image: teamKaran,
         imagePosition: "center top",
       },
       {
@@ -177,6 +186,7 @@ const categorizedTeams = [
         designation: "Senior Process Associate – Academic Operations",
         qualification: "",
         details: "Assists in training coordination and data handling",
+        image: teamManoj,
         imagePosition: "center top",
       },
       {
@@ -184,13 +194,6 @@ const categorizedTeams = [
         designation: "Junior Executive – Accounts & Medical Coding Support",
         qualification: "",
         details: "Supports Tally, coding, and administrative tasks",
-        imagePosition: "center top",
-      },
-      {
-        name: "Jebawesline Moses V",
-        designation: "Junior Developer – AI & Software Projects",
-        qualification: "",
-        details: "Works on AI-based applications and development",
         imagePosition: "center top",
       },
     ],
