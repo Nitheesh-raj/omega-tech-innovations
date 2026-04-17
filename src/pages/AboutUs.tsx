@@ -168,6 +168,13 @@ const categorizedTeams = [
         image: teamAshna,
         imagePosition: "center top",
       },
+      {
+        name: "Karthiga Devi",
+        designation: "Language cum Skill Development Trainer",
+        qualification: "",
+        details: "Focuses on providing holistic language and skill development training for students.",
+        imagePosition: "center top",
+      },
     ],
   },
 ];
