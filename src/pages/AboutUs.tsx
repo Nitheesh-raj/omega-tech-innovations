@@ -23,6 +23,8 @@ import teamThajinsha from "@/assets/team-thajinsha.jpeg";
 import teamKarthiga from "@/assets/team-karthiga.jpeg";
 import teamKaran from "@/assets/team-karan.jpeg";
 import teamManoj from "@/assets/team-manoj.jpeg";
+import teamMathumitha from "@/assets/team-mathumitha.jpeg";
+import teamJansirajan from "@/assets/team-jansirajan.jpeg";
 
 const categorizedTeams = [
   {
@@ -100,7 +102,7 @@ const categorizedTeams = [
         qualification: "",
         details: "Teaching, research guidance, and academic coordination",
         image: teamAbdul,
-        imagePosition: "center top",
+        imagePosition: "center",
       },
     ],
   },
@@ -194,6 +196,7 @@ const categorizedTeams = [
         designation: "Junior Executive – Accounts & Medical Coding Support",
         qualification: "",
         details: "Supports Tally, coding, and administrative tasks",
+        image: teamMathumitha,
         imagePosition: "center top",
       },
     ],
@@ -222,6 +225,7 @@ const categorizedTeams = [
         designation: "Trainer – Vedic Maths",
         qualification: "",
         details: "Specializes in speed maths and shortcut techniques",
+        image: teamJansirajan,
         imagePosition: "center top",
       },
       {
