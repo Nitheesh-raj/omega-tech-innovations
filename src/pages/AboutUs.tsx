@@ -400,9 +400,8 @@ const AboutUs = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
       <Footer />
     </div>
   );

@@ -9,7 +9,6 @@ const navLinks = [
   { label: "Courses", path: "/courses" },
   { label: "About Us", path: "/about-us" },
   { label: "Internship", path: "/internship" },
-  { label: "Consultancy", path: "/consultancy" },
   { label: "Placement", path: "/placement" },
 ];
 
