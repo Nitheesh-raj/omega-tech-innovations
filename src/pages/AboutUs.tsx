@@ -28,8 +28,7 @@ import teamJansirajan from "@/assets/team-jansirajan.jpeg";
 import teamRabik from "@/assets/team-rabik.jpeg";
 import teamDeepan from "@/assets/team-deepan.jpeg";
 import teamGodbrain from "@/assets/team-godbrain.jpeg";
-import collegeGnanamani from "@/assets/college-gnanamani.jpg";
-import collegeMGR from "@/assets/college-mgr.jpg";
+
 
 const categorizedTeams = [
   {
@@ -401,64 +400,9 @@ const AboutUs = () => {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Partner Colleges Section */}
-        <section className="bg-white py-20 pb-32 px-4 sm:px-6">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="font-display text-3xl font-bold tracking-wider sm:text-4xl text-[#1a103c] mb-4">
-                Our Partner Colleges
-              </h2>
-              <p className="text-slate-600 text-lg max-w-2xl mx-auto font-medium">
-                Growing network of institutions that trust us
-              </p>
-            </motion.div>
-
-            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
-              {[
-                { name: "Gnanamani College of Technology", logo: collegeGnanamani },
-                { name: "Dr. MGR Women's Arts & Science College", logo: collegeMGR },
-              ].map((college, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="w-[200px] sm:w-[220px] bg-white rounded-[12px] p-[24px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center gap-4 transition-transform hover:-translate-y-1 duration-300"
-                >
-                  <div className="h-[100px] w-full flex items-center justify-center">
-                    <img
-                      src={college.logo}
-                      alt={college.name}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </motion.div>
-              ))}
-              
-              {/* Dashed placeholder for & many more... */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="w-[200px] sm:w-[220px] h-[148px] bg-white rounded-[12px] border-2 border-dashed border-[#ccc] p-[24px] flex items-center justify-center"
-              >
-                <p className="text-sm font-semibold text-slate-400 text-center">
-                  & many more...
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-      </main>
+        </div>
+      </section>
+    </main>
       <Footer />
     </div>
   );
