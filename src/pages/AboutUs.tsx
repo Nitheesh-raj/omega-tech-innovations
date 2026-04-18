@@ -28,6 +28,8 @@ import teamJansirajan from "@/assets/team-jansirajan.jpeg";
 import teamRabik from "@/assets/team-rabik.jpeg";
 import teamDeepan from "@/assets/team-deepan.jpeg";
 import teamGodbrain from "@/assets/team-godbrain.jpeg";
+import collegeGnanamani from "@/assets/college-gnanamani.jpg";
+import collegeMGR from "@/assets/college-mgr.jpg";
 
 const categorizedTeams = [
   {
@@ -398,6 +400,67 @@ const AboutUs = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Partner Colleges Section */}
+        <section className="container py-20 pb-32 px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text mb-4">
+              Our Partner Colleges
+            </h2>
+            <p className="text-slate-700 text-lg max-w-2xl mx-auto font-medium">
+              Growing network of institutions that trust us for technology training and skill development.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+            {[
+              { name: "Gnanamani College of Technology", logo: collegeGnanamani },
+              { name: "Dr. MGR Women's Arts & Science College", logo: collegeMGR },
+            ].map((college, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative w-full sm:w-72 bg-white rounded-2xl border border-[#7B5BA7]/10 p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(123,91,167,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center gap-4"
+              >
+                <div className="h-32 w-full flex items-center justify-center p-2">
+                  <img
+                    src={college.logo}
+                    alt={college.name}
+                    className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+                <p className="text-center text-sm font-bold text-slate-700 mt-2 leading-tight">
+                  {college.name}
+                </p>
+              </motion.div>
+            ))}
+            
+            {/* More Coming Soon Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="w-full sm:w-72 bg-slate-50/50 rounded-2xl border-2 border-dashed border-slate-200 p-8 flex flex-col items-center justify-center gap-3 text-slate-400 group hover:border-[#7B5BA7]/30 transition-colors"
+            >
+              <div className="h-12 w-12 rounded-full border-2 border-dashed border-slate-200 flex items-center justify-center group-hover:border-[#7B5BA7]/30 transition-colors">
+                <span className="text-2xl font-light">+</span>
+              </div>
+              <p className="text-sm font-semibold tracking-wide uppercase transition-colors group-hover:text-[#7B5BA7]/60">
+                & many more...
+              </p>
+              <p className="text-xs font-medium italic">More coming soon</p>
+            </motion.div>
           </div>
         </section>
       </main>
