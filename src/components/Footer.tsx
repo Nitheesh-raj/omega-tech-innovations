@@ -63,7 +63,7 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
                 <div>
                   <p className="font-medium text-foreground/80 mb-0.5">Branch Office</p>
-                  <p>Thenkarai,<br />Periyakulam, Theni DT – 625601</p>
+                  <p>Theni, Ramanathapuram</p>
                 </div>
               </div>
               <a href="https://www.omegatechs.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">

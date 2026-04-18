@@ -119,11 +119,10 @@ const ContactSection = () => {
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <p className="text-sm font-semibold text-foreground">Branch Office</p>
-                        <span className="rounded-full bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-medium text-primary tracking-wider uppercase">Theni</span>
+                        <span className="rounded-full bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-medium text-primary tracking-wider uppercase">Theni, Ramanathapuram</span>
                       </div>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Thenkarai,<br />
-                        Periyakulam, Theni DT – 625601
+                        Theni, Ramanathapuram
                       </p>
                     </div>
                   </div>
