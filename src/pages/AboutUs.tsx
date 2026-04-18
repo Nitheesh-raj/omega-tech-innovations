@@ -26,6 +26,7 @@ import teamManoj from "@/assets/team-manoj.jpeg";
 import teamMathumitha from "@/assets/team-mathumitha.jpeg";
 import teamJansirajan from "@/assets/team-jansirajan.jpeg";
 import teamRabik from "@/assets/team-rabik.jpeg";
+import teamDeepan from "@/assets/team-deepan.jpeg";
 
 const categorizedTeams = [
   {
@@ -139,6 +140,14 @@ const categorizedTeams = [
   {
     title: "💼 Specialized Trainers & Skill Experts",
     members: [
+      {
+        name: "Deepan Jayarajan",
+        designation: "CPR & BLS Trainer",
+        qualification: "AHA Certified",
+        details: "Specialized trainer in Cardiopulmonary Resuscitation (CPR) and Basic Life Support (BLS), certified by the American Heart Association (AHA).",
+        image: teamDeepan,
+        imagePosition: "center top",
+      },
       {
         name: "Thajinsha M",
         designation: "Trainer – Vedic Maths & Quantitative Skills",
