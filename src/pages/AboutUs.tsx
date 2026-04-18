@@ -105,7 +105,7 @@ const categorizedTeams = [
         qualification: "",
         details: "Teaching, research guidance, and academic coordination",
         image: teamAbdul,
-        imagePosition: "center",
+        imagePosition: "60% 65%",
       },
     ],
   },
