@@ -28,7 +28,8 @@ import teamJansirajan from "@/assets/team-jansirajan.jpeg";
 import teamRabik from "@/assets/team-rabik.jpeg";
 import teamDeepan from "@/assets/team-deepan.jpeg";
 import teamGodbrain from "@/assets/team-godbrain.jpeg";
-
+import collegeGnanamani from "@/assets/college-gnanamani.jpg";
+import collegeMGR from "@/assets/college-mgr.jpg";
 
 const categorizedTeams = [
   {
@@ -299,6 +300,48 @@ const AboutUs = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Partner Colleges Bar */}
+        <div className="bg-secondary/20 border-y border-border/40 py-10">
+          <div className="container px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20"
+            >
+              <div className="text-center md:text-left space-y-1">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-primary/60">Our Trusted</h4>
+                <p className="text-xl font-display font-bold text-[#1a103c]">Partner Colleges</p>
+              </div>
+              
+              <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-80 hover:opacity-100 transition-opacity">
+                {[
+                  { name: "Gnanamani College of Technology", logo: collegeGnanamani },
+                  { name: "Dr. MGR Women's Arts & Science College", logo: collegeMGR },
+                ].map((college, i) => (
+                  <div key={i} className="flex flex-col items-center gap-3 group">
+                    <div className="h-16 w-32 md:h-20 md:w-40 flex items-center justify-center">
+                      <img
+                        src={college.logo}
+                        alt={college.name}
+                        className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                    <span className="text-[10px] md:text-xs font-bold text-slate-400 group-hover:text-primary transition-colors max-w-[120px] text-center leading-tight">
+                      {college.name}
+                    </span>
+                  </div>
+                ))}
+                
+                <div className="flex flex-col items-center justify-center gap-2 border-l border-slate-200 pl-12 h-16">
+                  <span className="text-sm font-bold text-slate-400 italic font-display">& many more...</span>
+                  <span className="text-[10px] font-medium text-slate-300 uppercase tracking-tighter">Expanding Partnerships</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
 
         {/* Meet Our Team Section */}
         <section className="container py-20 pb-24 px-4 sm:px-6">
