@@ -27,6 +27,7 @@ import teamMathumitha from "@/assets/team-mathumitha.jpeg";
 import teamJansirajan from "@/assets/team-jansirajan.jpeg";
 import teamRabik from "@/assets/team-rabik.jpeg";
 import teamDeepan from "@/assets/team-deepan.jpeg";
+import teamGodbrain from "@/assets/team-godbrain.jpeg";
 
 const categorizedTeams = [
   {
@@ -170,6 +171,14 @@ const categorizedTeams = [
         qualification: "",
         details: "Communication and language training expert",
         image: teamKarthiga,
+        imagePosition: "center top",
+      },
+      {
+        name: "God brain",
+        designation: "Robotic trainer Expert",
+        qualification: "",
+        details: "Expert in robotics training, industrial automation, and hands-on technical skill development.",
+        image: teamGodbrain,
         imagePosition: "center top",
       },
       {
