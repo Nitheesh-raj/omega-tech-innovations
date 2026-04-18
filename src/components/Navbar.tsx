@@ -6,8 +6,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Courses", path: "/courses" },
   { label: "About Us", path: "/about-us" },
+  { label: "Courses", path: "/courses" },
   { label: "Internship", path: "/internship" },
   { label: "Consultancy", path: "/consultancy" },
   { label: "Placement", path: "/placement" },
