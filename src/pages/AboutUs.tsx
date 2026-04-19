@@ -130,6 +130,14 @@ const categorizedTeams = [
         image: teamSenthila,
         imagePosition: "center top",
       },
+      {
+        name: "Joshna Shelly B",
+        designation: "Creative Lead – Digital Content & Media Production",
+        qualification: "BSc (CS)",
+        details: "Creates and manages digital content, branding visuals, and media",
+        image: teamJoshna,
+        imagePosition: "center top",
+      },
     ],
   },
   {
