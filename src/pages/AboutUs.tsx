@@ -75,7 +75,7 @@ const categorizedTeams = [
         qualification: "",
         details: "Teaching, research guidance, and academic coordination",
         image: teamAbdul,
-        imagePosition: "60% 65%",
+        imagePosition: "50% 30%",
       },
       {
         name: "Dr. Praise Dyice Mohanraj",
