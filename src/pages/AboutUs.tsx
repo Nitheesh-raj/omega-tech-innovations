@@ -29,6 +29,8 @@ import teamJansirajan from "@/assets/team-jansirajan.jpeg";
 import teamRabik from "@/assets/team-rabik.jpeg";
 import teamDeepan from "@/assets/team-deepan.jpeg";
 import teamGodbrain from "@/assets/team-godbrain.jpeg";
+import teamSafiulla from "@/assets/team-safiulla.jpeg";
+
 
 
 const categorizedTeams = [
@@ -262,8 +264,10 @@ const categorizedTeams = [
         designation: "Trainer – Soft Skills & Digital Marketing",
         qualification: "",
         details: "Conducts communication, employability skills, and basic digital marketing training",
+        image: teamSafiulla,
         imagePosition: "center top",
       },
+
     ],
   },
 ];
