@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Internship Enquiry — Omega Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:       #6c27cc;
+      --purple-mid:   #8b47e0;
+      --purple-light: #b68ef5;
+      --purple-pale:  #f0e8ff;
+      --purple-bg:    #faf7ff;
+      --white:        #ffffff;
+      --text:         #1a0a3d;
+      --text-mid:     #4a3570;
+      --text-muted:   #8a78a8;
+      --border:       #ddd0f5;
+      --border-focus: #6c27cc;
+      --error:        #d0004e;
+      --success:      #1ba86b;
+      --shadow:       0 2px 16px rgba(108,39,204,0.10);
+      --shadow-lg:    0 8px 40px rgba(108,39,204,0.15);
+      --radius:       12px;
+    }
+
+    body {
+      background: var(--purple-bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      padding: 48px 16px 60px;
+      position: relative;
+    }
+
+    /* Decorative blobs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::before {
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(108,39,204,0.09) 0%, transparent 70%);
+      top: -100px; right: -100px;
+    }
+    body::after {
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(139,71,224,0.07) 0%, transparent 70%);
+      bottom: -60px; left: -80px;
+    }
+
+    .wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      animation: rise 0.55s cubic-bezier(.22,.68,0,1.2) both;
+    }
+    @keyframes rise {
+      from { opacity:0; transform:translateY(30px) scale(0.98); }
+      to   { opacity:1; transform:translateY(0) scale(1); }
+    }
+
+    /* ── Top header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .logo-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      padding: 7px 18px 7px 10px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
+    .logo-icon {
+      width: 30px; height: 30px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-mid));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: -0.5px;
+      font-family: 'Fraunces', serif;
+    }
+    .logo-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--purple);
+      letter-spacing: 0.01em;
+    }
+
+    .header h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 900;
+      line-height: 1.12;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .header h1 em {
+      font-style: italic;
+      color: var(--purple);
+    }
+    .header p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Progress steps */
+    .steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 28px 0;
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .step-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-family: 'Fraunces', serif;
+      transition: all 0.3s;
+    }
+    .step.active .step-dot {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: white;
+      box-shadow: 0 0 0 4px rgba(108,39,204,0.15);
+    }
+    .step.done .step-dot {
+      background: var(--purple-pale);
+      border-color: var(--purple-light);
+      color: var(--purple);
+    }
+    .step-line {
+      width: 60px; height: 2px;
+      background: var(--border);
+      margin: 0 4px;
+      margin-bottom: 18px;
+      flex-shrink: 0;
+    }
+    .step-line.done { background: var(--purple-light); }
+    @media (max-width: 480px) {
+      .step-line { width: 28px; }
+      .steps { gap: 0; }
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Card top stripe */
+    .card-stripe {
+      height: 5px;
+      background: linear-gradient(90deg, var(--purple), var(--purple-mid), var(--purple-light));
+    }
+
+    .card-body { padding: 36px 40px 40px; }
+    @media (max-width: 500px) { .card-body { padding: 24px 20px 28px; } }
+
+    /* Section label */
+    .sec-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 28px 0 16px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+    }
+    .sec-title:first-child { margin-top: 0; }
+    .sec-icon {
+      width: 26px; height: 26px;
+      background: var(--purple-pale);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .sec-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Grid */
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    .mt { margin-top: 16px; }
+    @media (max-width: 520px) {
+      .g2, .g3 { grid-template-columns: 1fr; }
+    }
+
+    /* Field */
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-mid);
+    }
+    .req { color: var(--error); margin-left: 2px; }
+
+    input, select, textarea {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--purple-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 14px;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      appearance: none;
+    }
+    input::placeholder, textarea::placeholder { color: #c0b0da; }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--border-focus);
+      background: var(--white);
+      box-shadow: 0 0 0 3.5px rgba(108,39,204,0.12);
+    }
+    input.err, select.err, textarea.err {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(208,0,78,0.10);
+    }
+
+    .sel-wrap { position: relative; }
+    .sel-wrap::after {
+      content: '▾';
+      position: absolute; right: 13px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--purple-light);
+      pointer-events: none;
+      font-size: 12px;
+    }
+    select { padding-right: 36px; cursor: pointer; }
+    select option { background: #fff; color: var(--text); }
+
+    textarea { resize: vertical; min-height: 88px; line-height: 1.55; }
+
+    /* Radio pills */
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+    .pill-label {
+      position: relative;
+      cursor: pointer;
+    }
+    .pill-label input[type="radio"],
+    .pill-label input[type="checkbox"] {
+      position: absolute;
+      opacity: 0; width: 0; height: 0;
+    }
+    .pill-text {
+      display: inline-block;
+      padding: 7px 16px;
+      border-radius: 100px;
+      border: 1.5px solid var(--border);
+      background: var(--purple-bg);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-mid);
+      transition: all 0.18s;
+      user-select: none;
+    }
+    .pill-label input:checked + .pill-text {
+      background: var(--purple-pale);
+      border-color: var(--purple-mid);
+      color: var(--purple);
+      font-weight: 600;
+    }
+    .pill-label:hover .pill-text {
+      border-color: var(--purple-light);
+      color: var(--purple);
+    }
+
+    /* Date */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0.4;
+      cursor: pointer;
+      filter: hue-rotate(240deg) saturate(1.5);
+    }
+
+    /* Divider */
+    hr { border: none; border-top: 1px solid var(--border); margin: 8px 0 0; }
+
+    /* Submit */
+    .form-footer { margin-top: 28px; }
+    .btn-submit {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-mid) 100%);
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: transform 0.15s, box-shadow 0.2s, opacity 0.2s;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(108,39,204,0.30);
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(108,39,204,0.38);
+    }
+    .btn-submit:active { transform: translateY(0); }
+    .btn-submit::after {
+      content:'';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+      transform: translateX(-100%);
+      animation: sheen 3.5s ease infinite;
+    }
+    @keyframes sheen {
+      0%   { transform: translateX(-100%); }
+      55%, 100% { transform: translateX(110%); }
+    }
+
+    .form-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+    .form-note a { color: var(--purple); text-decoration: none; }
+
+    /* Success */
+    .success-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 56px 32px;
+      gap: 14px;
+      animation: rise 0.5s ease both;
+    }
+    .tick-wrap {
+      width: 68px; height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple-pale), #fff);
+      border: 2.5px solid var(--purple-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+    }
+    .success-screen h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--text);
+    }
+    .success-screen p { color: var(--text-muted); font-size: 14.5px; max-width: 360px; line-height: 1.6; }
+    .success-tag {
+      display: inline-block;
+      background: var(--purple-pale);
+      color: var(--purple);
+      border-radius: 100px;
+      padding: 5px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+
+    /* Footer */
+    .page-footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .page-footer strong { color: var(--purple); font-weight: 700; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-chip">
+      <div class="logo-icon">Ω</div>
+      <span class="logo-text">Omega Tech Private Limited</span>
+    </div>
+    <h1>Student <em>Internship</em><br/>Enquiry Form</h1>
+    <p>Start your career journey with us. Fill in the details below — our team will connect with you within 2–3 working days.</p>
+  </div>
+
+  <!-- Steps indicator -->
+  <div class="steps">
+    <div class="step active" id="s1">
+      <div class="step-dot">1</div>
+      <span>Personal</span>
+    </div>
+    <div class="step-line" id="l1"></div>
+    <div class="step" id="s2">
+      <div class="step-dot">2</div>
+      <span>Academic</span>
+    </div>
+    <div class="step-line" id="l2"></div>
+    <div class="step" id="s3">
+      <div class="step-dot">3</div>
+      <span>Internship</span>
+    </div>
+    <div class="step-line" id="l3"></div>
+    <div class="step" id="s4">
+      <div class="step-dot">4</div>
+      <span>Skills</span>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-stripe"></div>
+    <div class="card-body">
+
+      <form id="mainForm" novalidate>
+
+        <!-- 1. Personal Details -->
+        <div class="sec-title"><span class="sec-icon">👤</span> Personal Details</div>
+        <div class="g2">
+          <div class="field">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" name="firstName" placeholder="e.g. Preethi" required/>
+          </div>
+          <div class="field">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" name="lastName" placeholder="e.g. T." required/>
+          </div>
+        </div>
+        <div class="g2 mt">
+          <div class="field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" name="email" placeholder="student@email.com" required/>
+          </div>
+          <div class="field">
+            <label>Phone Number <span class="req">*</span></label>
+            <input type="tel" name="phone" placeholder="+91 9876543210" required/>
+          </div>
+        </div>
+        <div class="g2 mt">
+          <div class="field">
+            <label>Date of Birth</label>
+            <input type="date" name="dob"/>
+          </div>
+          <div class="field">
+            <label>Gender</label>
+            <div class="pills">
+              <label class="pill-label"><input type="radio" name="gender" value="Male"/><span class="pill-text">Male</span></label>
+              <label class="pill-label"><input type="radio" name="gender" value="Female"/><span class="pill-text">Female</span></label>
+              <label class="pill-label"><input type="radio" name="gender" value="Other"/><span class="pill-text">Other</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Academic Details -->
+        <div class="sec-title"><span class="sec-icon">🎓</span> Academic Details</div>
+        <div class="field">
+          <label>College / University Name <span class="req">*</span></label>
+          <input type="text" name="college" placeholder="e.g. Anna University, Chennai" required/>
+        </div>
+        <div class="g2 mt">
+          <div class="field">
+            <label>Department / Branch <span class="req">*</span></label>
+            <input type="text" name="dept" placeholder="e.g. Computer Science" required/>
+          </div>
+          <div class="field">
+            <label>Degree</label>
+            <div class="sel-wrap">
+              <select name="degree">
+                <option value="">Select Degree</option>
+                <option>B.E. / B.Tech</option>
+                <option>B.Sc</option>
+                <option>BCA</option>
+                <option>MCA</option>
+                <option>M.E. / M.Tech</option>
+                <option>MBA</option>
+                <option>Diploma</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="g3 mt">
+          <div class="field">
+            <label>Year of Study <span class="req">*</span></label>
+            <div class="sel-wrap">
+              <select name="year" required>
+                <option value="">Select</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+                <option>Final Year</option>
+                <option>Passed Out</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>CGPA / Percentage</label>
+            <input type="text" name="cgpa" placeholder="e.g. 8.2 / 82%"/>
+          </div>
+          <div class="field">
+            <label>Graduation Year</label>
+            <input type="text" name="gradYear" placeholder="e.g. 2025"/>
+          </div>
+        </div>
+
+        <!-- 3. Internship Preference -->
+        <div class="sec-title"><span class="sec-icon">💼</span> Internship Preference</div>
+        <div class="g2">
+          <div class="field">
+            <label>Preferred Role <span class="req">*</span></label>
+            <div class="sel-wrap">
+              <select name="role" required>
+                <option value="">Select a Role</option>
+                <option>Digital Marketing</option>
+                <option>Web Development (Frontend)</option>
+                <option>Web Development (Backend)</option>
+                <option>Full Stack Development</option>
+                <option>UI / UX Design</option>
+                <option>Content Writing & SEO</option>
+                <option>Data Analytics</option>
+                <option>HR & Recruitment</option>
+                <option>Business Development</option>
+                <option>Graphic Design (Canva)</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Duration Preferred</label>
+            <div class="sel-wrap">
+              <select name="duration">
+                <option value="">Select</option>
+                <option>1 Month</option>
+                <option>2 Months</option>
+                <option>3 Months</option>
+                <option>6 Months</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="mt field">
+          <label>Internship Mode</label>
+          <div class="pills">
+            <label class="pill-label"><input type="radio" name="mode" value="Online"/><span class="pill-text">🖥 Online</span></label>
+            <label class="pill-label"><input type="radio" name="mode" value="Offline"/><span class="pill-text">🏢 Offline</span></label>
+            <label class="pill-label"><input type="radio" name="mode" value="Hybrid"/><span class="pill-text">🔄 Hybrid</span></label>
+            <label class="pill-label"><input type="radio" name="mode" value="Any"/><span class="pill-text">✅ Any</span></label>
+          </div>
+        </div>
+        <div class="g2 mt">
+          <div class="field">
+            <label>Available From <span class="req">*</span></label>
+            <input type="date" name="startDate" required/>
+          </div>
+
+        </div>
+
+        <!-- 4. Skills & Experience -->
+        <div class="sec-title"><span class="sec-icon">⚡</span> Skills & Experience</div>
+        <div class="field">
+          <label>Technical / Core Skills <span class="req">*</span></label>
+          <input type="text" name="skills" placeholder="e.g. Python, Canva, SEO, React, MS Office..." required/>
+        </div>
+        <div class="mt field">
+          <label>Languages Known</label>
+          <div class="pills">
+            <label class="pill-label"><input type="checkbox" name="lang" value="Tamil"/><span class="pill-text">Tamil</span></label>
+            <label class="pill-label"><input type="checkbox" name="lang" value="English"/><span class="pill-text">English</span></label>
+            <label class="pill-label"><input type="checkbox" name="lang" value="Hindi"/><span class="pill-text">Hindi</span></label>
+            <label class="pill-label"><input type="checkbox" name="lang" value="Telugu"/><span class="pill-text">Telugu</span></label>
+            <label class="pill-label"><input type="checkbox" name="lang" value="Other"/><span class="pill-text">Other</span></label>
+          </div>
+        </div>
+        <div class="mt field">
+          <label>Prior Experience / Projects</label>
+          <textarea name="experience" placeholder="Mention internships, academic projects, certifications, or any relevant experience..."></textarea>
+        </div>
+        <div class="mt field">
+          <label>Portfolio / LinkedIn / GitHub URL</label>
+          <input type="url" name="portfolio" placeholder="https://linkedin.com/in/yourprofile"/>
+        </div>
+        <div class="mt field">
+          <label>Why do you want to intern at Omega Tech? <span class="req">*</span></label>
+          <textarea name="motivation" placeholder="Tell us in 2–3 lines about your interest and what you hope to achieve..." required></textarea>
+        </div>
+
+        <!-- How did you hear -->
+        <div class="mt field">
+          <label>How did you hear about us?</label>
+          <div class="pills">
+            <label class="pill-label"><input type="radio" name="source" value="College"/><span class="pill-text">College</span></label>
+            <label class="pill-label"><input type="radio" name="source" value="LinkedIn"/><span class="pill-text">LinkedIn</span></label>
+            <label class="pill-label"><input type="radio" name="source" value="Instagram"/><span class="pill-text">Instagram</span></label>
+            <label class="pill-label"><input type="radio" name="source" value="Friend"/><span class="pill-text">Friend/Referral</span></label>
+            <label class="pill-label"><input type="radio" name="source" value="Website"/><span class="pill-text">Website</span></label>
+            <label class="pill-label"><input type="radio" name="source" value="Other"/><span class="pill-text">Other</span></label>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn-submit">Submit My Enquiry →</button>
+          <p class="form-note">By submitting, you agree to our <a href="#">Privacy Policy</a>. Your data is safe with us.</p>
+        </div>
+
+      </form>
+
+      <!-- Success Screen -->
+      <div class="success-screen" id="successScreen">
+        <div class="tick-wrap">🎉</div>
+        <span class="success-tag">Application Received</span>
+        <h2>You're all set!</h2>
+        <p>Thank you for your interest in interning at <strong>Omega Tech Private Limited</strong>. Our team will review your enquiry and get in touch within 2–3 working days.</p>
+        <p style="font-size:13px; color:var(--purple); font-weight:600;">Keep an eye on your inbox 📬</p>
+      </div>
+
+    </div><!-- card-body -->
+  </div><!-- card -->
+
+  <p class="page-footer">© 2026 <strong>Omega Tech Private Limited</strong> · Empowering Student Careers</p>
+</div>
+
+<script>
+  const form  = document.getElementById('mainForm');
+  const suc   = document.getElementById('successScreen');
+
+  // Step highlight on scroll / focus
+  const sections = [
+    { id: 's1', fields: ['firstName','lastName','email','phone'] },
+    { id: 's2', fields: ['college','dept','year'] },
+    { id: 's3', fields: ['role','startDate'] },
+    { id: 's4', fields: ['skills','motivation'] },
+  ];
+  function updateSteps(active) {
+    sections.forEach((s, i) => {
+      const el = document.getElementById(s.id);
+      const line = document.getElementById('l' + (i+1));
+      el.classList.remove('active','done');
+      if (i < active) { el.classList.add('done'); if(line) line.classList.add('done'); }
+      else if (i === active) { el.classList.add('active'); if(line) line.classList.remove('done'); }
+      else { if(line) line.classList.remove('done'); }
+    });
+  }
+
+  form.addEventListener('focusin', function(e) {
+    sections.forEach((s, i) => {
+      if (s.fields.includes(e.target.name)) updateSteps(i);
+    });
+  });
+
+
+  // ─── CONFIGURATION ───
+  // 1. Create a Google Sheet.
+  // 2. Go to Extensions > Apps Script.
+  // 3. Paste the provided .gs code.
+  // 4. Click 'Deploy' > 'New Deployment' > Type: 'Web App'.
+  // 5. Change 'Who has access' to 'Anyone'.
+  // 6. Copy the Web App URL and paste it below.
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw9UV4gdvoKmU1QnrF4SlAnJycjHjkrrJgpfdrgJMjonXg4-8ieoYQy9h5iC83KybZT_g/exec";
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    // Clear previous error states
+    form.querySelectorAll('.err').forEach(el => {
+      el.classList.remove('err');
+      el.style.boxShadow = '';
+    });
+
+    // Validate [required] fields
+    form.querySelectorAll('[required]').forEach(el => {
+      if (!el.value.trim()) {
+        el.classList.add('err');
+        valid = false;
+      }
+    });
+
+    if (!valid) {
+      const first = form.querySelector('.err');
+      if (first) first.scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+
+    // Loading State
+    const submitBtn = form.querySelector('.btn-submit');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = "Processing Application...";
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = "0.7";
+
+    // Collect Data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    // Special Handling: Combine Languages Checkboxes
+    const selectedLangs = [];
+    form.querySelectorAll('input[name="lang"]:checked').forEach(cb => {
+      selectedLangs.push(cb.value);
+    });
+    data.languages = selectedLangs.join(', ');
+
+    // Post to Google Apps Script
+    // We use 'text/plain' to avoid CORS preflight (OPTIONS) which GAS doesn't handle well
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors', // We use no-cors if receiving the JSON is still problematic, but let's try standard first
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(() => {
+      // Due to GAS redirects and CORS, we often can't read the response body in 'no-cors' mode 
+      // or even standard mode sometimes. If the request reaches this point without a network 
+      // error, it's almost certainly successful in appending the row.
+      
+      // Success Handling
+      form.style.display = 'none';
+      suc.style.display  = 'flex';
+      updateSteps(4);
+      document.querySelector('.steps').style.display = 'none';
+      suc.scrollIntoView({ behavior:'smooth', block:'center' });
+    })
+    .catch(error => {
+      console.error('Submission Error:', error);
+      alert('There was a connection error. Please check if the Google Apps Script is deployed as "Anyone".');
+      
+      // Reset button
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = "1";
+    });
+  });
+
+  // Remove error on input
+  form.addEventListener('input', function(e) {
+    if (e.target.classList.contains('err') && e.target.value.trim()) {
+      e.target.classList.remove('err');
+      e.target.style.boxShadow = '';
+    }
+  });
+</script>
+</body>
+</html>

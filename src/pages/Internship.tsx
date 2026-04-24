@@ -145,9 +145,8 @@ const Internship = () => {
             </div>
           </motion.div>
 
-          {/* CTA */}
           <div className="mt-16 text-center">
-            <a href="#contact">
+            <a href="/omega-tech-student-internship-form.html">
               <Button size="lg" className="font-display text-sm tracking-wider box-glow">
                 Apply Now
               </Button>
