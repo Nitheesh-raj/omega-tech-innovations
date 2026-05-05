@@ -3,7 +3,8 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 import teamNisha from "@/assets/team-nisha.jpeg";
-import teamNilopher from "@/assets/team-nilopher.jpeg";
+import teamNilopher from "@/assets/team-nilopher-new.jpg";
+import teamPreethi from "@/assets/team-preethi.jpeg";
 import teamLaviel from "@/assets/team-laviel.jpg";
 
 import teamSanawar from "@/assets/team-sanawar.jpg";
@@ -14,6 +15,8 @@ import teamPradeep from "@/assets/team-pradeep.jpg";
 import teamSenthila from "@/assets/team-senthila.jpg";
 import teamPraise from "@/assets/team-praise.jpg";
 import teamLeona from "@/assets/team-leona.jpg";
+import teamHelen from "@/assets/team-helen.jpg";
+import teamPison from "@/assets/team-pison-new.jpg";
 import teamPriyanka from "@/assets/team-priyanka.jpg";
 import teamAshna from "@/assets/team-ashna.jpg";
 import teamAnanthbabu from "@/assets/team-ananthbabu.jpg";
@@ -51,12 +54,21 @@ const categorizedTeams = [
     title: "🎯 Director",
     members: [
       {
+        name: "Preethi",
+        designation: "Director/CEO",
+        qualification: "",
+        details: "Leading the organization with strategic vision and directing all operations to ensure excellence.",
+        image: teamPreethi,
+        imagePosition: "center top",
+      },
+      {
         name: "Nilofer",
         designation: "Director of Operations (PRO)",
         qualification: "",
         details: "Managing the operational backbone of the organization while serving as the primary communications liaison.",
         image: teamNilopher,
-        imagePosition: "50% 10%",
+        imagePosition: "center 20%",
+        imageScale: "1.3",
       },
     ],
   },
@@ -168,6 +180,25 @@ const categorizedTeams = [
         details: "Communication and language training expert",
         image: teamKarthiga,
         imagePosition: "center top",
+      },
+      {
+        name: "Helen Jeevakani P",
+        designation: "English & Communication Trainer",
+        qualification: "",
+        details: "Passionate English trainer with strong expertise in language teaching, lesson planning, and student engagement, dedicated to enhancing communication skills and academic performance.",
+        image: teamHelen,
+        imagePosition: "center 20%",
+        imageScale: "1.1",
+      },
+      {
+        name: "Pison Campbell Raj .R",
+        designation: "Aptitude & Communication Trainer",
+        qualification: "",
+        details: "Dedicated trainer with a strong foundation in English and communication, skilled in guiding students to improve aptitude, problem-solving, and interpersonal skills for career growth.",
+        image: teamPison,
+        imagePosition: "center top",
+        imageScale: "1.2",
+        imageOrigin: "center 15%",
       },
     ],
   },
@@ -359,7 +390,11 @@ const AboutUs = () => {
                                 src={member.image}
                                 alt={member.name}
                                 className="h-full w-full object-cover"
-                                style={{ objectPosition: member.imagePosition }}
+                                style={{ 
+                                  objectPosition: member.imagePosition,
+                                  transform: (member as any).imageScale ? `scale(${(member as any).imageScale})` : 'none',
+                                  transformOrigin: (member as any).imageOrigin || 'center'
+                                }}
                               />
                             ) : (
                               <div className="h-full w-full bg-gradient-to-br from-[#7B5BA7]/20 to-[#7B5BA7]/5 flex items-center justify-center">
