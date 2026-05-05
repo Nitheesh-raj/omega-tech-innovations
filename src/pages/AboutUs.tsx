@@ -17,6 +17,7 @@ import teamPraise from "@/assets/team-praise.jpg";
 import teamLeona from "@/assets/team-leona.jpg";
 import teamHelen from "@/assets/team-helen.jpg";
 import teamPison from "@/assets/team-pison-new.jpg";
+import teamEdwin from "@/assets/team-edwin.jpg";
 import teamPriyanka from "@/assets/team-priyanka.jpg";
 import teamAshna from "@/assets/team-ashna.jpg";
 import teamAnanthbabu from "@/assets/team-ananthbabu.jpg";
@@ -198,6 +199,16 @@ const categorizedTeams = [
         image: teamPison,
         imagePosition: "center top",
         imageScale: "1.2",
+        imageOrigin: "center 15%",
+      },
+      {
+        name: "Prof. D. Edwin Raja Kumar",
+        designation: "Senior Research & Academic Consultant",
+        qualification: "",
+        details: "Award-winning academician with extensive experience in teaching, research, and mentoring, contributing significantly to higher education and student development.",
+        image: teamEdwin,
+        imagePosition: "center top",
+        imageScale: "1.1",
         imageOrigin: "center 15%",
       },
     ],
