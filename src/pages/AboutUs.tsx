@@ -77,6 +77,16 @@ const categorizedTeams = [
     title: "🧠 Board of Excellence",
     members: [
       {
+        name: "Prof. D. Edwin Raja Kumar",
+        designation: "Senior Research & Academic Consultant",
+        qualification: "",
+        details: "Award-winning academician with extensive experience in teaching, research, and mentoring, contributing significantly to higher education and student development.",
+        image: teamEdwin,
+        imagePosition: "center top",
+        imageScale: "1.1",
+        imageOrigin: "center 15%",
+      },
+      {
         name: "Dr. R. Ananth Babu",
         designation: "Senior Research Head – Academic Excellence & Curriculum Development",
         qualification: "",
@@ -199,16 +209,6 @@ const categorizedTeams = [
         image: teamPison,
         imagePosition: "center top",
         imageScale: "1.2",
-        imageOrigin: "center 15%",
-      },
-      {
-        name: "Prof. D. Edwin Raja Kumar",
-        designation: "Senior Research & Academic Consultant",
-        qualification: "",
-        details: "Award-winning academician with extensive experience in teaching, research, and mentoring, contributing significantly to higher education and student development.",
-        image: teamEdwin,
-        imagePosition: "center top",
-        imageScale: "1.1",
         imageOrigin: "center 15%",
       },
     ],
