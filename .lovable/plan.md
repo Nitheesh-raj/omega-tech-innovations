@@ -12,7 +12,7 @@ A modern, techy, dark-themed website showcasing Omega Tech's courses, internship
 ## Pages & Sections
 
 ### 1. Home / Landing Page
-- **Hero Section** — Bold headline "Innovate. Learn. Lead." with animated background (gradient mesh or particles effect), CTA buttons for "Explore Courses" and "Apply for Internship"
+- **Hero Section** — Bold headline "Knowledge • Skills • Excellence" with animated background (gradient mesh or particles effect), CTA buttons for "Explore Courses" and "Apply for Internship"
 - **About Section** — Brief intro to Omega Tech with vision & mission highlights
 - **Why Choose Us** — Icon cards showcasing key benefits (Industry Curriculum, Live Projects, Certification, Placement Assistance, Expert Mentors, Affordable Fees)
 - **Featured Courses Preview** — Highlight top course categories with links to the full courses page
