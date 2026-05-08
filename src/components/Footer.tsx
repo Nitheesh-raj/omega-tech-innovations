@@ -16,8 +16,8 @@ const Footer = () => {
                 OMEGA <span className="text-primary">TECH</span>
               </span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Empowering Innovation. Building Future Leaders. A premier technology training and skill development organization.
+            <p className="text-sm font-bold tracking-widest text-primary uppercase">
+              Knowledge • Skills • Excellence
             </p>
             <div className="flex items-center gap-3">
               <a href="https://instagram.com/omegatechpvt" target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-muted-foreground hover:text-primary transition-colors">

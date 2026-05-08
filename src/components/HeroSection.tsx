@@ -25,20 +25,22 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mx-auto max-w-4xl space-y-8"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mx-auto flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm text-primary"
-          >
-            <Sparkles className="h-4 w-4" />
-            <span className="font-medium">Empowering Innovation. Building Future Leaders.</span>
-          </motion.div>
-
-          <h1 className="font-display text-5xl font-bold leading-tight tracking-wider sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="font-display text-5xl font-bold leading-tight tracking-wider sm:text-6xl md:text-7xl lg:text-8xl mb-4">
             <span className="gradient-text">OMEGA</span>{" "}
             <span className="text-primary">TECH</span>
           </h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <h2 className="font-display text-2xl font-bold tracking-[0.2em] text-foreground sm:text-3xl md:text-4xl uppercase">
+              Knowledge <span className="text-primary">•</span> Skills <span className="text-primary">•</span> Excellence
+            </h2>
+            <div className="h-1 w-24 bg-primary/30 rounded-full" />
+          </motion.div>
 
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
             A premier technology training and skill development organization committed to shaping 
