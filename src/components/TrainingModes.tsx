@@ -11,37 +11,50 @@ const modes = [
 
 const TrainingModes = () => {
   return (
-    <section className="py-24">
-      <div className="container">
+    <section className="relative z-10 py-28 overflow-hidden">
+      <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="font-display text-3xl font-bold tracking-wider sm:text-4xl gradient-text mb-4">
-            Training Modes
+          <span className="inline-block rounded-full border border-[#7C3AED]/20 bg-[#7C3AED]/10 px-4 py-1.5 text-xs font-semibold tracking-widest text-[#A855F7] uppercase mb-4">
+            Learning Flexibility
+          </span>
+          <h2 className="font-display text-4xl font-extrabold tracking-wider sm:text-5xl mb-4">
+            Training <span className="gradient-text">Modes</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-[#E5E7EB]/70 text-sm md:text-base max-w-2xl mx-auto font-medium">
             Flexible learning options to suit your schedule and preferences
           </p>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 max-w-7xl mx-auto">
           {modes.map((mode, i) => (
             <motion.div
               key={mode.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group rounded-xl border border-border/50 bg-card/50 p-6 text-center backdrop-blur-sm transition-all hover:border-primary/30 hover:box-glow"
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              className="group relative rounded-2xl border border-[#7C3AED]/12 bg-[#0F172A]/25 p-6 text-center backdrop-blur-md hover:border-[#A855F7]/30 hover:bg-[#0F172A]/40 hover:shadow-[0_12px_30px_rgba(124,58,237,0.1)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
             >
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <mode.icon className="h-7 w-7 text-primary" />
+              {/* Pulsing indicator under hover */}
+              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-[#7C3AED] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-[#7C3AED]/10 border border-[#7C3AED]/15 group-hover:bg-[#7C3AED]/25 transition-colors relative">
+                <div className="absolute inset-0 bg-[#7C3AED]/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <mode.icon className="h-6.5 w-6.5 text-[#7C3AED] relative z-10 transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <h3 className="font-display text-xs font-semibold tracking-wider text-foreground mb-2">{mode.title}</h3>
-              <p className="text-xs text-muted-foreground">{mode.desc}</p>
+              
+              <h3 className="font-display text-xs font-bold uppercase tracking-[0.15em] text-white mb-2.5">
+                {mode.title}
+              </h3>
+              
+              <p className="text-[11px] sm:text-xs text-[#E5E7EB]/60 leading-relaxed font-medium">
+                {mode.desc}
+              </p>
             </motion.div>
           ))}
         </div>
